@@ -105,7 +105,7 @@ public class NntpService : INntpService
         return Task.CompletedTask;
     }
 
-    private void AddLogEntry(string message, LogLevel level = LogLevel.Info)
+    private void AddLogEntry(string message,  ngPost.MAUI.Models.LogLevel level = ngPost.MAUI.Models.LogLevel.Info)
     {
         var entry = new LogEntry(message, level);
         _logQueue.Enqueue(entry);

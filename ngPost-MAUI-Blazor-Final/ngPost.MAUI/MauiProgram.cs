@@ -1,4 +1,4 @@
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using ngPost.MAUI.ViewModels;
 using ngPost.MAUI.Services;
 using Microsoft.AspNetCore.Components.WebView.Maui;
@@ -10,34 +10,20 @@ public static class MauiProgram
     public static MauiApp CreateMauiApp()
     {
         var builder = MauiApp.CreateBuilder();
+
         builder
             .UseMauiApp<App>()
+            //.UseMauiBlazorWebView() // ✅ this extension comes from the NuGet + using above
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-            })
-            .UseMauiBlazorWebView();
+            });
 
 #if DEBUG
-        builder.Logging.AddDebug();
+        builder.Services.AddBlazorWebViewDeveloperTools();
 #endif
 
-        // Register Services
-        builder.Services.AddSingleton<INntpService, NntpService>();
-        builder.Services.AddSingleton<IFileManagerService, FileManagerService>();
-        builder.Services.AddSingleton<ICompressionService, CompressionService>();
-        builder.Services.AddSingleton<ISettingsService, SettingsService>();
-
-        // Register ViewModels
-        builder.Services.AddSingleton<MainViewModel>();
-        builder.Services.AddSingleton<ServerConfigViewModel>();
-        builder.Services.AddSingleton<PostingParametersViewModel>();
-        builder.Services.AddSingleton<FileManagerViewModel>();
-        builder.Services.AddSingleton<PostingLogViewModel>();
-
-        // Register Blazor specific services
-        builder.Services.AddBlazorWebView();
+        builder.Services.AddMauiBlazorWebView(); // ✅ required for BlazorWebView to function
 
         return builder.Build();
     }

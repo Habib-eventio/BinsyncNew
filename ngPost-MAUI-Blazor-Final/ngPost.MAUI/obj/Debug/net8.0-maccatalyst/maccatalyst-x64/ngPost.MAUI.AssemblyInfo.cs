@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ngPost.MAUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("4.3.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("4.3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("4.3+7d9c4bb33209a0f9a3f9a0b30de88d272a9944e0")]
 [assembly: System.Reflection.AssemblyProductAttribute("ngPost.MAUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ngPost.MAUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("4.3.0.0")]
