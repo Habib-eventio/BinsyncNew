@@ -1,0 +1,5 @@
+<Project>
+  <PropertyGroup>
+    <UsingMicrosoftNETSdkWeb>true</UsingMicrosoftNETSdkWeb>
+  </PropertyGroup>
+</Project>

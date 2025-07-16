@@ -22,6 +22,7 @@
             @foreach (var server in ViewModel.Servers)
             {
                 <tr>
+
                     <td class="server-actions">
                         <button @onclick="@(() => ViewModel.TestConnectionCommand.Execute(server))">Test</button>
                         <button @onclick="@(() => ViewModel.RemoveServerCommand.Execute(server))">Remove</button>
