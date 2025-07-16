@@ -1,0 +1,51 @@
+@page "/postinglog"
+@inject ngPost.MAUI.ViewModels.PostingLogViewModel ViewModel
+
+<PageTitle>Posting Log</PageTitle>
+
+<div class="section-frame">
+    <h3 class="section-title">Posting Controls</h3>
+    <div class="button-group">
+        @if (!ViewModel.IsPosting)
+        {
+            <button @onclick="@ViewModel.StartPostingCommand.Execute">Start Posting</button>
+        }
+        else
+        {
+            <button @onclick="@ViewModel.PausePostingCommand.Execute">Pause/Resume</button>
+        }
+        <button @onclick="@ViewModel.StopPostingCommand.Execute">Stop Posting</button>
+        <button @onclick="@ViewModel.ClearLogCommand.Execute">Clear Log</button>
+    </div>
+</div>
+
+<div class="section-frame">
+    <h3 class="section-title">Progress</h3>
+    <div class="progress-bar-container">
+        <div class="progress-bar" style="width:@(ViewModel.CurrentProgress)%">@(ViewModel.CurrentProgress.ToString("F0"))%</div>
+    </div>
+    <p>Status: @ViewModel.CurrentStatus</p>
+    <p>Available Connections: @ViewModel.AvailableConnections</p>
+    <p>Upload Size: @ViewModel.UploadSize</p>
+    <p>Average Speed: @(ViewModel.AverageSpeed.ToString("F2")) MB/s</p>
+</div>
+
+<div class="section-frame">
+    <h3 class="section-title">Log Output</h3>
+    <div class="log-output">
+        @foreach (var entry in ViewModel.LogEntries)
+        {
+            <p>@entry.FormattedTimestamp - @entry.Message</p>
+        }
+    </div>
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await ViewModel.InitializeAsync();
+        ViewModel.PropertyChanged += (sender, args) => StateHasChanged();
+        ViewModel.LogEntries.CollectionChanged += (sender, args) => StateHasChanged();
+    }
+}
+

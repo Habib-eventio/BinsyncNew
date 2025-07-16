@@ -1,0 +1,117 @@
+@page "/filemanager"
+@inject ngPost.MAUI.ViewModels.FileManagerViewModel ViewModel
+
+<PageTitle>Files</PageTitle>
+
+<div class="section-frame">
+    <h3 class="section-title">Compression Settings</h3>
+    <div class="form-grid">
+        <label>compress path:</label>
+        <div class="input-group">
+            <input type="text" @bind="@ViewModel.CompressionSettings.CompressPath" placeholder="/tmp" />
+            <button @onclick="@ViewModel.SelectCompressPathCommand.Execute">Browse</button>
+        </div>
+
+        <label>rar path:</label>
+        <div class="input-group">
+            <input type="text" @bind="@ViewModel.CompressionSettings.RarPath" placeholder="/usr/bin/rar" />
+            <button @onclick="@ViewModel.SelectRarPathCommand.Execute">Browse</button>
+            <button @onclick="@ViewModel.ValidateRarPathCommand.Execute">Validate</button>
+        </div>
+
+        <label>vol size:</label>
+        <input type="number" @bind="@ViewModel.CompressionSettings.VolSize" placeholder="42" />
+
+        <label>limit rar number:</label>
+        <input type="checkbox" @bind="@ViewModel.CompressionSettings.LimitRarNumber" />
+
+        <label>par2 redundancy (%):</label>
+        <input type="number" @bind="@ViewModel.CompressionSettings.Par2Redundancy" placeholder="0" />
+    </div>
+    <div class="button-group">
+        <button @onclick="@ViewModel.SaveCompressionSettingsCommand.Execute">Save Compression Settings</button>
+    </div>
+</div>
+
+<div class="section-frame">
+    <h3 class="section-title">Files to Post</h3>
+    @if (ViewModel.Files.Any())
+    {
+        <div class="file-list">
+            @foreach (var file in ViewModel.Files)
+            {
+                <div class="file-list-item">
+                    <div class="file-info">
+                        <div>@file.Name</div>
+                        <small>@file.FormattedSize</small>
+                        @if (file.Progress > 0)
+                        {
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width:@(file.Progress)%"></div>
+                            </div>
+                        }
+                    </div>
+                    <div class="file-actions">
+                        <button @onclick="@(() => ViewModel.RemoveFileCommand.Execute(file))">Remove</button>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p style="text-align: center; padding: 20px;">No files selected</p>
+    }
+    <div class="button-group">
+        <button @onclick="@ViewModel.SelectFilesCommand.Execute">Select Files</button>
+        <button @onclick="@ViewModel.SelectFolderCommand.Execute">Select Folder</button>
+        <button @onclick="@ViewModel.RemoveAllFilesCommand.Execute">Remove All</button>
+    </div>
+</div>
+
+<div class="section-frame">
+    <h3 class="section-title">Options</h3>
+    <div class="form-grid-2col">
+        <div>
+            <input type="checkbox" @bind="@ViewModel.CompressionSettings.CompressEnabled" />
+            <label>compress</label>
+        </div>
+        <div>
+            <input type="checkbox" @bind="@ViewModel.CompressionSettings.GeneratePar2" />
+            <label>gen par2</label>
+        </div>
+        <div>
+            <input type="checkbox" @bind="@ViewModel.CompressionSettings.KeepArchives" />
+            <label>keep archives</label>
+        </div>
+    </div>
+</div>
+
+<div class="section-frame">
+    <h3 class="section-title">NZB Settings</h3>
+    <div class="form-grid">
+        <label>nzb file:</label>
+        <input type="text" @bind="@ViewModel.NzbFilePath" placeholder="d5/nzb/ngPost_v4.3_x64_setup/ngPost_v4.3_x64_setup.nzb" />
+
+        <label>nzb password:</label>
+        <input type="password" @bind="@ViewModel.NzbPassword" />
+
+        <label>show debug info:</label>
+        <input type="checkbox" @bind="@ViewModel.ShowDebugInfo" />
+    </div>
+    <div class="button-group">
+        <button>About</button>
+        <button>Post Files</button>
+        <button>Donate</button>
+    </div>
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await ViewModel.InitializeAsync();
+        ViewModel.PropertyChanged += (sender, args) => StateHasChanged();
+        ViewModel.Files.CollectionChanged += (sender, args) => StateHasChanged();
+    }
+}
+

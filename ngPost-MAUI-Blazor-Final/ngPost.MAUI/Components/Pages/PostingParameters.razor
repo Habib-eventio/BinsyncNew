@@ -1,0 +1,61 @@
+@page "/postingparameters"
+@inject ngPost.MAUI.ViewModels.PostingParametersViewModel ViewModel
+
+<PageTitle>Parameters</PageTitle>
+
+<div class="section-frame">
+    <h3 class="section-title">Parameters</h3>
+    <div class="form-grid">
+        <label>Poster:</label>
+        <input type="text" @bind="@ViewModel.Settings.PosterEmail" placeholder="w8uOnbziXvIdp@ngPost.com" />
+
+        <label>NewsGroups:</label>
+        <input type="text" @bind="@ViewModel.Settings.NewsGroups" placeholder="alt.binaries.apps,alt.binaries.applications" />
+
+        <label>Article Size:</label>
+        <input type="number" @bind="@ViewModel.Settings.ArticleSize" placeholder="716800" />
+
+        <label>nb Retry:</label>
+        <input type="number" @bind="@ViewModel.Settings.NbRetry" placeholder="5" />
+
+        <label>Nb Threads:</label>
+        <input type="number" @bind="@ViewModel.Settings.NbThreads" placeholder="8" />
+
+        <label>Language:</label>
+        <select @bind="@ViewModel.Settings.Language">
+            @foreach (var lang in ViewModel.AvailableLanguages)
+            {
+                <option value="@lang">@lang</option>
+            }
+        </select>
+
+        <label>Article's obfuscation:</label>
+        <input type="checkbox" @bind="@ViewModel.Settings.ObfuscateArticles" />
+        <span>Subject changed to be a UUID + random From</span>
+
+        <label>File name obfuscation:</label>
+        <input type="checkbox" @bind="@ViewModel.Settings.ObfuscateFileName" />
+
+        <label>nzb destination Path:</label>
+        <div class="input-group">
+            <input type="text" @bind="@ViewModel.Settings.NzbDestinationPath" placeholder="/home/bruel/Downloads/nzb" />
+            <button @onclick="@ViewModel.SelectNzbDestinationCommand.Execute">Browse</button>
+        </div>
+
+        <label>Shutdown computer:</label>
+        <input type="checkbox" @bind="@ViewModel.Settings.ShutdownComputer" />
+    </div>
+    <div class="button-group">
+        <button @onclick="@ViewModel.SaveSettingsCommand.Execute">Save Settings</button>
+        <button @onclick="@ViewModel.ResetToDefaultsCommand.Execute">Reset to Defaults</button>
+    </div>
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await ViewModel.InitializeAsync();
+        ViewModel.PropertyChanged += (sender, args) => StateHasChanged();
+    }
+}
+
