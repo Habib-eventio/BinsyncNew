@@ -1,0 +1,228 @@
+{
+  "Version": 1,
+  "Hash": "zO55xv534T/iUj3lyRnXtq3B7K+x8obLBPsClQetYBo=",
+  "Source": "ngPost.MAUI",
+  "BasePath": "/",
+  "Mode": "Root",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ngPost.MAUI\\wwwroot",
+      "Source": "ngPost.MAUI",
+      "ContentRoot": "C:\\Users\\Administrator\\source\\repos\\BinsyncNew\\ngPost-MAUI-Blazor-Final\\ngPost.MAUI\\wwwroot\\",
+      "BasePath": "/",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Administrator\\source\\repos\\BinsyncNew\\ngPost-MAUI-Blazor-Final\\ngPost.MAUI\\wwwroot\\css\\app.css",
+      "SourceId": "ngPost.MAUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Administrator\\source\\repos\\BinsyncNew\\ngPost-MAUI-Blazor-Final\\ngPost.MAUI\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/app#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xho8phr5a0",
+      "Integrity": "+0S8735LAN6/gyW7ROMYXKOAIWRSAkX3NlXOuog/Cqs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\app.css"
+    },
+    {
+      "Identity": "C:\\Users\\Administrator\\source\\repos\\BinsyncNew\\ngPost-MAUI-Blazor-Final\\ngPost.MAUI\\wwwroot\\index.html",
+      "SourceId": "ngPost.MAUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Administrator\\source\\repos\\BinsyncNew\\ngPost-MAUI-Blazor-Final\\ngPost.MAUI\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bqbyuurur5",
+      "Integrity": "47WZc19v6gRG0EBg09TY5SZDAFZL8V/ku3jSfifQaJk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "css/app.css",
+      "AssetFile": "C:\\Users\\Administrator\\source\\repos\\BinsyncNew\\ngPost-MAUI-Blazor-Final\\ngPost.MAUI\\wwwroot\\css\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5005"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+0S8735LAN6/gyW7ROMYXKOAIWRSAkX3NlXOuog/Cqs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Jul 2025 15:54:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+0S8735LAN6/gyW7ROMYXKOAIWRSAkX3NlXOuog/Cqs="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.xho8phr5a0.css",
+      "AssetFile": "C:\\Users\\Administrator\\source\\repos\\BinsyncNew\\ngPost-MAUI-Blazor-Final\\ngPost.MAUI\\wwwroot\\css\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5005"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+0S8735LAN6/gyW7ROMYXKOAIWRSAkX3NlXOuog/Cqs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Jul 2025 15:54:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xho8phr5a0"
+        },
+        {
+          "Name": "label",
+          "Value": "css/app.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+0S8735LAN6/gyW7ROMYXKOAIWRSAkX3NlXOuog/Cqs="
+        }
+      ]
+    },
+    {
+      "Route": "index.bqbyuurur5.html",
+      "AssetFile": "C:\\Users\\Administrator\\source\\repos\\BinsyncNew\\ngPost-MAUI-Blazor-Final\\ngPost.MAUI\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "590"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47WZc19v6gRG0EBg09TY5SZDAFZL8V/ku3jSfifQaJk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Jul 2025 15:54:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bqbyuurur5"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-47WZc19v6gRG0EBg09TY5SZDAFZL8V/ku3jSfifQaJk="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\Administrator\\source\\repos\\BinsyncNew\\ngPost-MAUI-Blazor-Final\\ngPost.MAUI\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "590"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47WZc19v6gRG0EBg09TY5SZDAFZL8V/ku3jSfifQaJk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Jul 2025 15:54:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-47WZc19v6gRG0EBg09TY5SZDAFZL8V/ku3jSfifQaJk="
+        }
+      ]
+    }
+  ]
+}

@@ -22,13 +22,7 @@
             @foreach (var server in ViewModel.Servers)
             {
                 <tr>
-                    <td><input type="text" @bind="@server.Host" /></td>
-                    <td><input type="number" @bind="@server.Port" /></td>
-                    <td><input type="checkbox" @bind="@server.SslEnabled" /></td>
-                    <td><input type="number" @bind="@server.Connections" /></td>
-                    <td><input type="text" @bind="@server.Username" /></td>
-                    <td><input type="password" @bind="@server.Password" /></td>
-                    <td><input type="checkbox" @bind="@server.IsEnabled" /></td>
+
                     <td class="server-actions">
                         <button @onclick="@(() => ViewModel.TestConnectionCommand.Execute(server))">Test</button>
                         <button @onclick="@(() => ViewModel.RemoveServerCommand.Execute(server))">Remove</button>

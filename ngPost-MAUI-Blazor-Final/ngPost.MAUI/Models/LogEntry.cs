@@ -18,7 +18,7 @@ public partial class LogEntry : ObservableObject
         Timestamp = DateTime.Now;
     }
 
-    public LogEntry(string message, LogLevel level = LogLevel.Info)
+    public LogEntry(string message,  ngPost.MAUI.Models.LogLevel level = LogLevel.Info)
     {
         Timestamp = DateTime.Now;
         Message = message;
