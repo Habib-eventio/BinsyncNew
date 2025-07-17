@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "5SSGIZeaMLw=",
+  "success": false,
+  "projectFilePath": "C:\\Users\\Administrator\\source\\repos\\BinsyncNew\\ngPost.MAUI\\ngPost.MAUI.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to read project information for 'ngPost.MAUI': The property PackageVersion was expected to have a single value across all target frameworks, but instead had the following values: 1.0.0, 4.3"
+    }
+  ]
+}
